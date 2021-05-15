@@ -6,7 +6,7 @@ import Loading from './components/Loading'
 
 function App(){
     const [isLoading, setIsLoading] = useState(true)
-
+    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent)
     setTimeout(() => {
         setIsLoading(false);    
     }, 2000);
@@ -14,7 +14,7 @@ function App(){
     return(
         <>
         {
-            isLoading?<Loading />:<App_mobile/>        
+            isMobileDevice?(isLoading?<Loading />:<App_mobile/>):window.location.href="http://resume.deepanshuyadav.xyz"        
         }
         </>
     )
