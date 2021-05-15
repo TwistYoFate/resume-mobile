@@ -6,12 +6,10 @@ import Loading from './components/Loading'
 
 function App(){
     const [isLoading, setIsLoading] = useState(true)
-    
-    React.useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false);    
-        }, 2000);
-    }, [])
+
+    setTimeout(() => {
+        setIsLoading(false);    
+    }, 2000);
 
     return(
         <>
