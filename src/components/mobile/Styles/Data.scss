@@ -12,15 +12,16 @@ $font-bold:'Raleway@wght:500', sans-serif;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-content:space-between;
-    align-items:space-between;
+    justify-content:space-between;
+    align-items:center;
     bottom:2500px;
     // align-items: center;
 
     .item{
-        width:1080px;
+        width:300vw;
+        left:60vw;
         position: relative;
-        left:150px;
+        // left:150px;
         background-color: $color-sand;
         order:1;
         border-radius: 50px;

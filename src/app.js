@@ -1,14 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import reactDOM from 'react-dom'
 import App_mobile from './components/App.mobile'
-
+import Loading from './components/Loading'
 
 
 function App(){
-    // const isMobileDevice = /Mobi/i.test(window.navigator.userAgent)
+    const [isLoading, setIsLoading] = useState(true)
+    
+    React.useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);    
+        }, 2000);
+    }, [])
+
     return(
         <>
-            <App_mobile/>        
+        {
+            isLoading?<Loading />:<App_mobile/>        
+        }
         </>
     )
 }
