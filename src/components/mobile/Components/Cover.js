@@ -1,18 +1,9 @@
 import React from 'react'
 import '../Styles/Mobile-Resume.scss'
 import Data from './Data'
+import resume from '../../../assets/pdfs/resume.PDF'
 
-// import PolyBackComponent from './PolyBackComponent'
 function Cover({currentSection}) {
-    // const [isMobile,setIsMobile] = React.useState(/Mobi/i.test(window.navigator.userAgent))
-    // console.log(isMobile)
-
-    // React.useEffect(()=>{
-    //     if(isMobile){
-    //         document.body.style.transform="scale(1)";
-    //     }
-    // },[isMobile])
-    
     React.useEffect(() => {
         currentSection?document.getElementById(currentSection).scrollIntoView({behaviour:"smooth"}):null;
     },[currentSection])
@@ -190,12 +181,12 @@ function Cover({currentSection}) {
                     </button>
                     <br />
                     <br />
-                    Also checkout Slambook - A Blogging website by me based on MERN stack by clicking <br />
+                    Also you can download my resume by clicking <br />
                     <br />
                     <br />
-                    <button id="slambook-button" >
-                    <a onClick={()=>{window.location.replace("http://deepanshuyadav.xyz/slambook/home")}}>
-                        Slambook
+                    <button id="slambook-button"  >
+                    <a style={{color:"black",textDecoration:"none"}} href={resume} download="Deepanshu_Yadav_Resume">
+                        Download
                     </a>
                     </button>
                     <br /><br />

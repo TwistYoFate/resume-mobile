@@ -1,6 +1,7 @@
 const path = require('path')
-require('dotenv')
+require('dotenv').config()
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const webpack = require("webpack");
 
 module.exports = {
     entry: "./src/app.js",
@@ -21,12 +22,19 @@ module.exports = {
             template:'./src/index.html',
             filename:'index.html',
             inject:'body'
-        })
+        }),
+        new webpack.EnvironmentPlugin([
+            'RESUME_DESKTOP',
+            'RESUME_MOBILE',
+            'PF_CREDIT_CARD',
+            'PF_VANSHTNT',
+            'PF_PRODUCT_CARD',
+        ])
     ],
     module:{
         rules:[
             {
-                 test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+                 test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3|PDF)$/,
                  type: 'asset/resource',                  
             },
             {

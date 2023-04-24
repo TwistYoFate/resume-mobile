@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{Suspense, useState} from 'react'
 import reactDOM from 'react-dom'
 import App_mobile from './components/App.mobile'
 import Loading from './components/Loading'
@@ -9,12 +9,12 @@ function App(){
     const isMobileDevice = /Mobi/i.test(window.navigator.userAgent)
     setTimeout(() => {
         setIsLoading(false);    
-    }, 2000);
+    }, 1000);
 
     return(
         <>
         {
-            isMobileDevice?(isLoading?<Loading />:<App_mobile/>):window.location.href="http://resume.deepanshuyadav.xyz"        
+            isMobileDevice?(isLoading?<Loading />:<Suspense fallback={<Loading />}><App_mobile/></Suspense>):window.location.href=process.env.RESUME_DESKTOP
         }
         </>
     )
